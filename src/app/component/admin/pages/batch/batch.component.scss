@@ -1,0 +1,68 @@
+.batch-component {
+    background-color: #f1f5ff;
+    height: 100vh;
+    width: 100%;
+}
+.batchs-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 24px;
+    padding-top: 16px;
+}
+.refresh-icon{
+    background-color: white;
+    color: skyblue;
+    border: none;
+    width: 48px;
+    height: 40px;
+}
+
+.add-batch-section{
+    background-color: #fff;
+    margin: 24px;
+    padding: 24px;
+}
+.addBatch-search{
+    display: flex;
+    justify-content: space-between;
+}
+.search-field{
+    height: 24px;
+    padding: 8px;
+    border-radius: 3px;
+    width: 240px;
+    opacity: 0.6;
+}
+
+.addBatch-button{
+    background-color: #f1f5ff;
+    padding: 0,24px;
+    width: 120px;
+    opacity: 0.6;
+    border-radius: 0;
+}
+.batch-section-text{
+    margin: 20px;
+    font-size: large;
+    padding-top: 20px;
+    opacity: 0.7;
+}
+
+.reactive-form-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.reactive-form-table > .table {
+    margin-bottom: 0;
+    
+  }
+  table {
+    background-color: #d8e4fc;
+    border-collapse: unset;
+    padding: 10px;
+    border-radius: 5px;
+  }

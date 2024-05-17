@@ -1,0 +1,33 @@
+.delete-program-dialog{
+    width: 450px;
+    height: 200px;
+}
+
+.dialog-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 24px 0 24px;  //top right bottom left
+}
+.dialog-body{
+    display: flex;
+    margin: 16px 24px 0 24px;
+    color: black;
+    opacity: 0.7;
+}
+
+.divider{
+    flex: 1; /* Allow the horizontal line to grow to fill the available space */
+    border: none;
+    height: 2px;
+    background-color: gray; /* Change the color to gray */
+    opacity: 0.6;
+    width: 89%;
+    margin-top: -8px;
+}
+.dialog-footer{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 24px;
+    margin-bottom: 0px;
+    margin-top: 28px;
+}

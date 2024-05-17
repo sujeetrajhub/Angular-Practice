@@ -1,0 +1,21 @@
+.programs-table{
+    margin-top: 60px;
+}
+.reactive-form-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.reactive-form-table > .table {
+    margin-bottom: 0;
+    
+    
+  }
+  table {
+    background-color: #f1f5ff;
+    border-collapse: unset;
+    padding: 10px;
+    border-radius: 5px;
+  }

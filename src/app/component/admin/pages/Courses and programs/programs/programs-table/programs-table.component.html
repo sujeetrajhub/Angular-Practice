@@ -1,0 +1,220 @@
+<div class="programs-table-component">
+  <div class="reactive-form-table">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      (matSortChange)="announceSortChange($event)"
+    >
+      <form [formGroup]="editProgramReactiveForm">
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="mat-subtitle-1" style="font-weight: 500">Actions</span>
+          </th>
+          <td mat-cell *matCellDef="let row; let elementId = index">
+            <!-- actions column table data -->
+            <div class="actions" *ngIf="elementId != editRowId; else editMode">
+              <button
+                mat-icon-button
+                (click)="onEditProgramClick(elementId, row)"
+              >
+                <mat-icon>create</mat-icon>
+              </button>
+              <button mat-icon-button (click)="onDeleteProgramClick(row.id,row.programName,row.code)">
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+            </div>
+
+            <!-- actions column table edit mode data -->
+            <ng-template #editMode>
+              <div class="action-buttons-edit">
+                <button mat-icon-button (click)="saveProgram(row.id)">
+                    <mat-icon> done </mat-icon>
+                </button>
+                <button mat-icon-button (click)="cancelEditing()">
+                    <mat-icon >
+                         close 
+                      </mat-icon>
+                </button>
+                
+              </div>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- Code Column -->
+        <ng-container matColumnDef="code">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionCode="Sort by code"
+          >
+            <span class="mat-subtitle-1" style="font-weight: 500">Code</span>
+          </th>
+          <td mat-cell *matCellDef="let row; let elementId = index">
+            <ng-container *ngIf="elementId != editRowId; else editMode"><div>{{ row.code }}</div></ng-container>
+            <ng-template #editMode>
+                <mat-form-field
+                style="width: 150px !important"
+                class="dense-form-field-5"
+                appearance="outline"
+              >
+                <input
+                  matInput
+                  formControlName="code"
+                  placeholder="Enter Code"
+                />
+              </mat-form-field>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- Program Name Column -->
+        <ng-container matColumnDef="programName">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionProgramName="Sort by programName"
+          >
+            <span class="mat-subtitle-1" style="font-weight: 500"
+              >Program Name</span
+            >
+          </th>
+          <td mat-cell *matCellDef="let row; let elementId = index">
+            <ng-container *ngIf="elementId != editRowId; else editMode"
+              ><div>{{ row.programName }}</div></ng-container>
+            <ng-template #editMode>
+                <mat-form-field
+                style="width: 150px !important"
+                class="dense-form-field-5"
+                appearance="outline"
+              >
+                <input
+                  matInput
+                  formControlName="programName"
+                  placeholder="Enter Program Name"
+                />
+              </mat-form-field>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- Theory Time Column -->
+        <ng-container matColumnDef="theoryTime">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionTheoryTime="Sort by theoryTime"
+          >
+            <span class="mat-subtitle-1" style="font-weight: 500"
+              >Theory Time</span
+            >
+          </th>
+          <td mat-cell *matCellDef="let row; let elementId = index">
+            <ng-container *ngIf="elementId != editRowId; else editMode"
+              ><div>{{ row.theoryTime }}</div></ng-container
+            >
+            <ng-template #editMode>
+                <mat-form-field
+                style="width: 150px !important"
+                class="dense-form-field-5"
+                appearance="outline"
+              >
+                <input
+                  matInput
+                  formControlName="theoryTime"
+                  placeholder="Enter Theory Time"
+                />
+              </mat-form-field>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- Practice Time Column -->
+        <ng-container matColumnDef="practiceTime">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionPracticeTime="Sort by practiceTime"
+          >
+            <span class="mat-subtitle-1" style="font-weight: 500"
+              >Practice Time</span
+            >
+          </th>
+          <td mat-cell *matCellDef="let row; let elementId = index">
+            <ng-container *ngIf="elementId != editRowId; else editMode"
+              ><div>{{ row.practiceTime }}</div></ng-container
+            >
+            <ng-template #editMode>
+                <mat-form-field
+                style="width: 150px !important"
+                class="dense-form-field-5"
+                appearance="outline"
+              >
+                <input
+                  matInput
+                  formControlName="practiceTime"
+                  placeholder="Enter Practice Time"
+                />
+              </mat-form-field>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- Description  Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="mat-subtitle-1" style="font-weight: 500"
+              >Description</span
+            >
+          </th>
+          <td mat-cell *matCellDef="let row; let elementId = index">
+            <ng-container *ngIf="elementId != editRowId; else editMode"
+              ><div>{{ row.description }}</div></ng-container
+            >
+            <ng-template #editMode>
+                <mat-form-field
+                style="width: 150px !important"
+                class="dense-form-field-5"
+                appearance="outline"
+              >
+                <input
+                  matInput
+                  formControlName="description"
+                  placeholder="Enter Description"
+                />
+              </mat-form-field>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- Courses  Column -->
+        <ng-container matColumnDef="course">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="mat-subtitle-1" style="font-weight: 500">Courses</span>
+          </th>
+          <td mat-cell *matCellDef="let row; let elementId = index">
+            <ng-container
+              ><div>{{ row.course }}</div></ng-container
+            >
+          </td>
+        </ng-container>
+      </form>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator
+      [length]="100"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+</div>

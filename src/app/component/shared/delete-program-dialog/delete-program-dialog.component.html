@@ -1,0 +1,15 @@
+<div class="delete-program-dialog">
+    <div class="dialog-header">
+        <p class="mat-h2">Delete Program</p>
+        <mat-icon [mat-dialog-close] ="false">close</mat-icon>
+    </div>
+    <hr class="divider">
+    <div class="dialog-body">
+        <p class="mat-subtitle-1" style="font-weight: 500">Are you sure you want to delete this program {{data.code}}/{{data.programName}}?</p>
+    </div>
+    <div class="dialog-footer">
+        <button mat-raised-button color="primary" style="margin-right: 10px;" [mat-dialog-close] ="true">Yes</button>
+        <button mat-raised-button [mat-dialog-close] ="false" >No</button>
+    </div>
+    
+</div>

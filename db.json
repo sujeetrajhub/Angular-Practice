@@ -1,0 +1,51 @@
+{
+  "programs": [
+    {
+      "id": "547b",
+      "code": "S12",
+      "programName": "Java",
+      "theoryTime": "1",
+      "practiceTime": "3",
+      "description": null,
+      "course": null
+    },
+    {
+      "id": "319a",
+      "code": "321",
+      "programName": "Angular",
+      "theoryTime": "1",
+      "practiceTime": "2",
+      "description": "hsgdfyusgf",
+      "course": null,
+      "courses": null
+    }
+  ],
+  "teachers": [
+    {
+      "teacherName": "Harshdeep Singh",
+      "courseAssigned": "Machine Learning",
+      "emailId": "harsh@gmail.com",
+      "id": "1"
+    },
+    {
+      "id": "fea4",
+      "teacherName": "abdisuaisdd",
+      "courseAssigned": "Web development",
+      "emailId": "sfhvvusdf@gmail.com"
+    }
+  ],
+  "batches": [
+    {
+      "id": "1",
+      "batchName": "Batch 1",
+      "batchCode": "B1",
+      "batchStartDate": "2022-10-10"
+    },
+    {
+      "id": "17eb",
+      "batchCode": "b2sdf",
+      "batchName": "edi-intern",
+      "batchStartDate": null
+    }
+  ]
+}
